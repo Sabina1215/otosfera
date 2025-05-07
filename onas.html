@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О компании Отосфера</title>
+    <link rel="stylesheet" href="onas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="фавикон.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="лого (2).png" alt="">
+            <nav class="navigation">
+                <ul class="desktop-menu">
+                    <li><a href="index.html">ГЛАВНАЯ</a></li>
+                    <li><a href="услуги.html">УСЛУГИ</a></li>
+                    <li><a href="аппараты.html">АППАРАТЫ</a></li>
+                    <li><a href="onas.html">О НАС</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <button class="close-menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="услуги.html">Услуги</a></li>
+            <li><a href="аппараты.html">Аппараты</a></li>
+            <li><a href="onas.html">О нас</a></li>
+        </ul>
+    </div>
+
+
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeMenu = document.querySelector('.close-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+    </script>
+
+
+
+    <div class="container-onas">
+        <h1>О нашей компании</h1>
+        <div class="onas">
+            <img src="onas.jpg" alt="">
+            <p><span class="mark1">«Отосфера»</span> – одна из крупнейших в России сеть центров слухопротезирования.</p>
+
+        </div>
+
+        <div class="text-onas">
+            <div>
+                <p><span class="mark2">1996</span> <br>год открытия первой клиники</p>
+            </div>
+            <div>
+                <p><span class="mark2">более 30</span> <br>центров по всей России и Татарстане</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="spisok">
+        <h1>У нас вы сможете:</h1>
+        <ul>
+            <li>получить качественную консультацию по вопросам нарушения слуха</li>
+            <li>протестировать слух с использованием специализированного аудиометрического оборудования</li>
+            <li>подобрать слуховой аппарат с учетом индивидуальных особенностей слуха</li>
+            <li>получить консультацию по использованию слухового аппарата и по уходу за ним</li>
+            <li>обслужить слуховой аппарат по гарантии, или получить постгарантийный ремонт</li>
+        </ul>
+    </div>
+
+    <div class="specialist">
+        <div class="text_specialist">
+            <p>Наш специалист</p>
+            <p class="fio">Исламова Нина 
+                Михайловна</p>
+            <p>Высококлассный врач-сурдолог<br>
+                Стаж работы: 23 года</p>
+        </div>
+        <div class="fot">
+            <div class="niz1" style="background: #73cadf; "></div>
+            <div class="verh" style="background-image: url(специалист\ 1.png); "></div>
+            <div class="niz2" style="background:  #f14b35;"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="fon">
+        <div class="forma">
+            <p>Консультация <br><span class="mark1">СУРДОЛОГА</span> <br>поможет вам решить вашу проблему</p>
+            <button id="openFormBtn">Записаться на прием</button>
+        </div>
+        <div class="foto">
+            <img src="лого (2).png" alt="">
+        </div>
+    </div>
+
+
+
+
+
+    <div id="overlay" class="overlay">
+        <div id="formContainer" class="form-container">
+            <span id="closeFormBtn" class="close-btn">&times;</span>
+            <h2>Запись на прием</h2>
+            <p>заполните форму и наш администратор свяжется с Вами</p>
+            <form id="appointmentForm">
+                <label for="name">ФИО:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+
+                <button id="FormaBtn" type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Получаем элементы
+        const openFormBtn = document.getElementById('openFormBtn');
+        const closeFormBtn = document.getElementById('closeFormBtn');
+        const overlay = document.getElementById('overlay');
+        const appointmentForm = document.getElementById('appointmentForm');
+
+        // Открытие формы
+        openFormBtn.addEventListener('click', () => {
+            overlay.style.display = 'flex';
+        });
+
+        // Закрытие формы
+        closeFormBtn.addEventListener('click', () => {
+            overlay.style.display = 'none';
+        });
+
+        // Закрытие формы при клике вне формы
+        overlay.addEventListener('click', (event) => {
+            if (event.target === overlay) {
+                overlay.style.display = 'none';
+            }
+        });
+
+        // Обработка отправки формы (пример)
+        appointmentForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Предотвращаем стандартную отправку формы
+
+            // Получаем данные из формы
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+
+            // Здесь можно отправить данные на сервер (например, с помощью AJAX)
+            console.log('Имя:', name);
+            console.log('Телефон:', phone);
+
+            // Закрываем форму после отправки
+            overlay.style.display = 'none';
+            alert('Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.');
+
+            // Очищаем форму (опционально)
+            appointmentForm.reset();
+        });
+    </script>
+
+
+
+
+
+
+    <section class="kontakt">
+        <div class="kontakt-map">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A298eaa25cfb6a2feeb28f4b2affcaabf8f6437920f85a58bd03f12ae8baab034&amp;source=constructor"
+                width="600" height="400" frameborder="0"></iframe>
+        </div>
+        <div class="kontakt2">
+            <h3>Мы находимся по адресу</h3>
+            <p>г.Самара, ул. Коммунистическая, 23</p>
+
+            <h3>График работы</h3>
+            <p>Понедельник-Пятница 9:00-17:00</p>
+            <p>Суббота, Воскресенье выходной</p>
+
+            <h3>Контакты</h3>
+            <div class="telephon">
+                <img src="телефон.png" alt="">
+                <p>+7 (846) 260-40-40</p>
+            </div>
+            <div class="pochta">
+                <img src="почта.png" alt="">
+                <p>otosfera63@mail.ru</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column address">
+                <h3>Адрес</h3>
+                <p>г. Самара,
+                    Коммунистическая ул., 23</p>
+            </div>
+            <div class="footer-column phone">
+                <h3>Телефон</h3>
+                <p>+7 (846) 260-40-40</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

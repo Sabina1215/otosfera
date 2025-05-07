@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отосфера</title>
+    <link rel="stylesheet" href="1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="фавикон.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="logo"><img  src="лого (2).png" alt="">
+          <nav class="navigation">
+            <ul class="desktop-menu">
+                <li><a href="#">ГЛАВНАЯ</a></li>
+                <li><a href="услуги.html">УСЛУГИ</a></li>
+                <li><a href="аппараты.html">АППАРАТЫ</a></li>
+                <li><a href="onas.html">О НАС</a></li>
+            </ul>
+            <button class="menu-toggle">
+              <i class="fas fa-bars"></i>
+            </button>
+        </nav></div>
+        
+        <div class="image-container">
+      <img src="Group 1.png" alt="Под шапкой" >
+      <div class="text1">
+            <h1>Забота о вашем слухе – наша <br>главная цель!</h1>
+            <p>В нашей клинике мы создаем комфортную <br> 
+                и доверительную атмосферу, где каждый пациент<br> 
+                получает персональное внимание.</p>
+        </div>
+     </div>
+     </header>
+     
+
+
+
+
+        
+
+    <div class="mobile-menu">
+      <button class="close-menu">
+        <i class="fas fa-times"></i>
+      </button>
+      <ul>
+        <li><a href="#">Главная</a></li>
+          <li><a href="услуги.html">Услуги</a></li>
+          <li><a href="аппараты.html">Аппараты</a></li>
+          <li><a href="onas.html">О нас</a></li>
+      </ul>
+    </div>
+
+ 
+
+
+    <script>
+      const menuToggle = document.querySelector('.menu-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const closeMenu = document.querySelector('.close-menu');
+  
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.add('open');
+  });
+  
+  closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+  });
+    </script>
+
+   
+       
+          
+    
+
+ <div class="menus">
+        <div id="button1" class="menu">
+            <img src="ухо.png" alt="">
+            <p>Слуховые аппараты</p>
+        </div>
+        <div id="button2" class="menu">
+            <a href="услуги.html"><img src="врач.png" alt="">
+            <p>Услуги</p>
+            </a> 
+        </div>
+        <div id="button3" class="menu">
+            <img src="клиника.png" alt="">
+            <p>О нас</p>
+        </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+const myLink = document.getElementById('button1');
+const myLink1 = document.getElementById('button2');
+const myLink2 = document.getElementById('button3');
+
+
+if (myLink) {
+  myLink.addEventListener('click', function(event) {
+  window.location.href = 'аппараты.html'; 
+  });
+}
+if (myLink1) {
+  myLink1.addEventListener('click', function(event) {
+  window.location.href = 'Услуги.html'; 
+  });
+}
+if (myLink2) {
+  myLink2.addEventListener('click', function(event) {
+  window.location.href = 'onas.html'; 
+  });
+}
+});
+</script>
+
+
+
+
+
+<div class="container">
+    <img src="image 3.png" alt="Пример изображения">
+    <div class="text2">
+        
+        <p>Наша компания работает в области<br>
+             слухопротезирования с <span class="mark">1996 года</span>.<br> 
+             Сейчас в России открыто уже <span class="mark">25</span> наших центра.<br>
+             <span class="mark">Квалифицированный персонал</span> и<br>
+             <span class="mark">современное диагностическое<br> 
+             оборудование</span> позволят определить<br>
+              степень потери слуха и подобрать<br>
+               именно тот слуховой аппарат, <br>
+               который <span class="mark">необходим Вам.</span> </p>
+               <button id="openFormBtn" class="conteiner-button">Записаться на прием</button>
+    </div>
+    
+</div>
+
+
+<div id="overlay" class="overlay">
+  <div id="formContainer" class="form-container">
+      <span id="closeFormBtn" class="close-btn">&times;</span>
+      <h2>Запись на прием</h2>
+      <p>заполните форму и наш администратор свяжется с Вами</p>
+      <form id="appointmentForm">
+          <label for="name">ФИО:</label>
+          <input type="text" id="name" name="name" required><br><br>
+
+          <label for="phone">Телефон:</label>
+          <input type="tel" id="phone" name="phone" required><br><br>
+
+          <button id="FormaBtn" type="submit">Отправить</button>
+      </form>
+  </div>
+</div>
+
+<script>
+  // Получаем элементы
+  const openFormBtn = document.getElementById('openFormBtn');
+  const closeFormBtn = document.getElementById('closeFormBtn');
+  const overlay = document.getElementById('overlay');
+  const appointmentForm = document.getElementById('appointmentForm');
+
+  // Открытие формы
+  openFormBtn.addEventListener('click', () => {
+      overlay.style.display = 'flex';
+  });
+
+  // Закрытие формы
+  closeFormBtn.addEventListener('click', () => {
+      overlay.style.display = 'none';
+  });
+
+  // Закрытие формы при клике вне формы
+  overlay.addEventListener('click', (event) => {
+      if (event.target === overlay) {
+          overlay.style.display = 'none';
+      }
+  });
+
+  // Обработка отправки формы (пример)
+  appointmentForm.addEventListener('submit', (event) => {
+      event.preventDefault(); // Предотвращаем стандартную отправку формы
+
+      // Получаем данные из формы
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+
+      // Здесь можно отправить данные на сервер (например, с помощью AJAX)
+      console.log('Имя:', name);
+      console.log('Телефон:', phone);
+
+      // Закрываем форму после отправки
+      overlay.style.display = 'none';
+      alert('Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.');
+
+      // Очищаем форму (опционально)
+      appointmentForm.reset();
+  });
+</script>
+
+
+
+ 
+<!-- /*отзывы*/ -->
+<div class="container2">
+    <h1 class="title">Отзывы наших клиентов</h1>
+
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <!-- Карточки отзывов будут здесь -->
+      </div>
+    </div>
+
+    <div class="carousel-controls">
+      <button class="carousel-button prev-button">Предыдущий</button>
+      <button class="carousel-button next-button">Следующий</button>
+    </div>
+  </div>
+
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const prevButton = document.querySelector('.prev-button');
+    const nextButton = document.querySelector('.next-button');
+    let currentSlide = 0;
+    const cards = [  // Массив с данными отзывов
+      {
+        image: 'отзыв1.jpg',
+        name: 'Иван Иванов',
+        text: 'Обратился в “Отосферу” для проверки слуха и подбора  слухового аппарата. Очень доволен профессионализмом сурдолога, внимательным отношением и качественным обслуживанием. Помогли подобрать оптимальный слуховой аппарат, который значительно улучшил качество моей жизни.  Рекомендую!',
+      },
+      {
+        image: 'отзыв2.webp',
+        name: 'Алексей Сидоров',
+        text: 'В “Отосферу” попал по рекомендации знакомого и ни разу не пожалел. Первичный прием у сурдолога прошел в спокойной и доброжелательной обстановке. Врач внимательно выслушал мои жалобы, провел тщательное обследование и подробно объяснил результаты.',
+      },
+      {
+        image: 'отзыв3.jpg',
+        name: 'Мария Петрова',
+        text: 'Выбирала компанию для покупки слухового аппарата ребёнку, остановилась на “Отосфере” и не пожалела. Сурдолог во время приема проявил высокий уровень знаний и помог разобраться в аппаратах.  Рекомендую “Отосферу” всем, кто нуждается в помощи сурдолога и подборе слуховых аппаратов!',
+      },
+        {
+        image: 'отзыв4.jpg',
+        name: 'Елена Смирнова',
+        text: 'Заказывали аппараты родителям. Предлагали широкий выбор слуховых аппаратов от разных производителей. Родители очень довольны, все сделано по высшему разряду!',
+      },
+         {
+        image: 'отзыв6.webp',
+        name: 'Дмитрий Козлов',
+        text: 'Все отлично, быстро, качественно, без нареканий. Спасибо за вашу работу! Рекомендую всем компанию "Отосфера"',
+      },
+      {
+        image: 'отзыв5.jpg',
+        name: 'Ольга Васильева',
+        text: 'Прекрасный сервис и отличные сотрудники! Помогли подобрать оптимальный слуховой аппарат, который значительно улучшил качество моей жизни.',
+      },
+    ];
+
+    const visibleCards = 1;  // Количество одновременно видимых карточек
+    let cardWidth = 360;    // Ширина одной карточки (с отступами)
+
+
+    function updateCarousel() {
+      let translateX = -currentSlide * cardWidth;
+      track.style.transform = `translateX(${translateX}px)`;
+    }
+
+    function createCards() {
+        cards.forEach(cardData => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            const cardImage = document.createElement('div');
+            cardImage.classList.add('card-image');
+            const img = document.createElement('img');
+            img.src = cardData.image;
+            img.alt = cardData.name;
+            cardImage.appendChild(img);
+            card.appendChild(cardImage);
+
+            const cardName = document.createElement('div');
+            cardName.classList.add('card-name');
+            cardName.textContent = cardData.name;
+            card.appendChild(cardName);
+
+            const cardText = document.createElement('p');
+            cardText.classList.add('card-text');
+            cardText.textContent = cardData.text;
+            card.appendChild(cardText);
+
+            track.appendChild(card);
+        });
+    }
+
+    createCards();
+    updateCarousel(); //  Первоначальная отрисовка
+
+    prevButton.addEventListener('click', () => {
+      currentSlide = Math.max(0, currentSlide - 1); //  Переходим к предыдущему
+      updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+      currentSlide = Math.min(cards.length - visibleCards , currentSlide + 1);  //  Переходим к следующему
+      updateCarousel();
+    });
+  </script>
+
+
+
+
+
+<div class="faq-container">
+
+  <h1 class="title-fag">Часто задаваемые вопросы</h1>
+  <div class="faq-item">
+      <div class="faq-question">
+          <i class="fas fa-plus"></i>
+          Какие у вас часы работы?
+      </div>
+      <div class="faq-answer">
+          <p>Мы работаем с понедельника по пятницу с 9:00 до 17:00. Выходные дни - суббота и воскресенье.</p>
+      </div>
+  </div>
+
+  <div class="faq-item">
+      <div class="faq-question">
+          <i class="fas fa-plus"></i>
+          Как записаться на прием?
+      </div>
+      <div class="faq-answer">
+          <p>Записаться на прием можно онлайн через форму на нашем сайте или позвонив по телефону +7 (846) 260-40-40.</p>
+      </div>
+  </div>
+
+  <div class="faq-item">
+      <div class="faq-question">
+          <i class="fas fa-plus"></i>
+          Где находится клиника “Отосфера” и как с вами связаться?
+      </div>
+      <div class="faq-answer">
+          <p>Наш адрес:  г. Самара, Коммунистическая ул., 23. Вы можете связаться с нами по телефону: +7 (846) 260-40-40. Также на нашем сайте есть форма для записи на приём.</p>
+      </div>
+  </div>
+
+
+  <div class="faq-item">
+    <div class="faq-question">
+        <i class="fas fa-plus"></i>
+        Принимаете ли вы пациентов с полисом ОМС/ДМС?
+    </div>
+    <div class="faq-answer">
+        <p>Да, мы работаем с некоторыми страховыми компаниями. Пожалуйста, уточните информацию о сотрудничестве с вашей страховой компанией у администратора по телефону.</p>
+    </div>
+</div>
+
+<div class="faq-item">
+  <div class="faq-question">
+      <i class="fas fa-plus"></i>
+      Как проходит диагностика слуха в вашей клинике?
+  </div>
+  <div class="faq-answer">
+      <p>Диагностика слуха включает в себя несколько тестов, позволяющих определить остроту слуха, выявить возможные нарушения и их причины. Процедура безболезненна. Наш администратор с радостью ответить на все интересующие вас вопросы. Позвоните по номеру телефону.</p>
+  </div>
+</div>
+  <!-- Добавьте другие вопросы и ответы здесь -->
+</div>
+
+<script>
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+          question.classList.toggle('active');
+          const answer = question.nextElementSibling;
+          if (answer.style.display === 'block') {
+              answer.style.display = 'none';
+          } else {
+              answer.style.display = 'block';
+          }
+      });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+    
+<footer>
+    <div class="footer-container">
+        <div class="footer-column address">
+            <h3>Адрес</h3>
+            <p>г. Самара, 
+                Коммунистическая ул., 23</p>
+        </div>
+        <div class="footer-column phone">
+            <h3>Телефон</h3>
+            <p>+7 (846) 260-40-40</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

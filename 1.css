@@ -1,0 +1,946 @@
+body {
+    font-family:  Century Gothic, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    
+}
+
+
+
+
+
+
+
+/*шапка*/
+header {
+  position: relative;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(0, 0, 0);
+   
+}
+
+.logo {
+    margin: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.navigation{
+  margin-right: 1%;
+}
+.desktop-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    
+  }
+  
+  .desktop-menu li {
+    margin-left: 30px;
+    
+  }
+  
+  .desktop-menu a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+
+  .menu-toggle {
+    background: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Скрываем на больших экранах */
+  }
+
+  /* Мобильное меню */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color:#73C9DF;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: translateX(100%); /* Скрываем меню за пределами экрана */
+    transition: transform 0.3s ease; /* Плавная анимация */
+    z-index: 1000; /*  Убеждаемся, что меню поверх всего */
+  }
+  
+  .mobile-menu.open {
+    transform: translateX(0); /* Показываем меню */
+  }
+  
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mobile-menu li {
+    margin-bottom: 10px;
+  }
+  
+  .mobile-menu a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+  }
+  
+  .close-menu {
+    background: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+ 
+
+
+  .image-container {
+    position: relative; /* Позволяет изображению зайти на шапку */
+    margin-top: -135px; /* Отрицательный отступ, чтобы изображение было выше и заходило на шапку */
+    z-index: -100; /* Устанавливаем z-index, чтобы картинка была ниже шапки */
+}
+
+.image-container img {
+    width: 100%; /* Адаптивная ширина картинки */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+}
+
+
+.text1{
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    font-family:  Century Gothic, sans-serif;
+}
+
+.text1 h1{
+    color: black;
+    font-size: 40px;
+}
+
+.text1 p{
+    font-size: 30px;
+    color: #196477;
+}
+
+
+ 
+  /* Медиа-запросы */
+ 
+@media (max-width: 1024px) {
+    .navigation li {
+        margin-left: 15px;
+    }
+
+    .text1 h1{
+      font-size: 2rem;
+    }
+
+    .text1 p{
+      font-size: 1.3rem;
+    }
+
+    .logo img {
+      max-width: 30%;
+    }
+  
+}
+
+
+
+
+@media (max-width: 768px) {
+  .logo {
+    display: flex;
+        justify-content: space-between;
+
+        padding: 2% 3%;
+}
+  .desktop-menu {
+      display: none; /* Скрываем десктопное меню на маленьких экранах */
+    }
+  
+    .menu-toggle {
+      display: block; /* Показываем кнопку меню */
+    }
+    
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+    
+    .navigation li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    .logo img {
+      max-width: 24%;
+      height: auto;
+  }
+  .text1 h1{
+    font-size: 1.5rem;
+  }
+
+  .text1 p{
+    font-size: 1.1rem;
+  }
+
+ 
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+
+    
+    .menu-toggle{
+      font-size: 20px;
+    }
+
+    .navigation a {
+        font-size: 14px;
+    }
+
+    .text1 h1{
+      font-size: 0.9rem;
+    }
+
+    .text1 p{
+      font-size: 0.6rem;
+    }
+    .mobile-menu li {
+      font-size: 15px;
+  }
+
+   
+}
+
+
+
+
+
+
+
+
+
+.menus { 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12%;
+  margin-top: 12%;
+}
+
+.menu {
+  background-color: #73C9DF;
+  border-radius: 60px;
+  padding: 15px;
+  margin: 0 4%;
+  width: 100%;
+  transition: 1s; /* Время эффекта */
+}
+
+.menu:hover {
+  transform: scale(1.1); /* Увеличиваем масштаб */
+}
+
+.menu p {
+  font-size: 35px;
+  padding-left: 6%;
+  margin-top: 30%;
+}
+
+.menu a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+/* Медиа-запросы для адаптивности */
+
+/* Для устройств 1024px */
+@media (max-width: 1024px) {
+  .menu p {
+      font-size: 30px; /* Уменьшаем шрифт */
+      margin-top: 20%; /* Уменьшаем отступ сверху */
+  }
+  .menu {
+    width: 30%;
+    margin: 0 3%;
+  }
+}
+
+/* Для устройств 768px */
+@media (max-width: 768px) {
+  .menu p {
+      font-size: 25px; /* Уменьшаем шрифт еще больше */
+      margin-top: 15%; /* Изменяем отступ */
+  }
+
+  .menu {
+      margin: 0 2%; /* Уменьшаем отступы по бокам */
+      padding: 10px; /* Уменьшаем внутренние отступы */
+      border-radius: 40px;
+  }
+
+  .menu img{
+    width: 40%;
+  }
+}
+
+/* Для устройств 480px */
+@media (max-width: 480px) {
+  header{
+    height: 100%;
+  }
+
+  .image-container{
+    margin-top: -60px;
+  }
+  .menus { 
+    width: 100%;
+  }
+  .menu img {
+    width: 60%;
+}
+
+  .menu p {
+      font-size: 0.7rem; /* Уменьшаем шрифт для мобильных устройств */
+      margin-top: 12%; /* Уменьшаем отступ сверху */
+  }
+
+  .menu {
+      margin: 3% ; /* Уменьшаем отступы по бокам */
+      padding: 1px; /* Уменьшаем внутренние отступы */
+      width: 25%;
+      border-radius: 25px;
+}
+}
+
+
+
+
+
+
+
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Полупрозрачный черный фон */
+  z-index: 1000;
+  /* Убедитесь, что оверлей поверх всего контента */
+  display: none;
+  /* Скрываем оверлей изначально */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Стили для контейнера формы */
+.form-container {
+  background-color: #73C9DF;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 450px;
+  position: relative;
+  /*  Для позиционирования кнопки закрытия */
+  text-align: center;
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #000000;
+}
+
+.form-container p {
+  text-align: center;
+  color: #F14B35;
+}
+
+/* Стили для кнопки закрытия */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #000000;
+}
+
+#FormaBtn {
+  background-color: #196477;
+  color: white;
+  border: none;
+  padding: 10px 8px;
+  font-size: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 40%;
+  margin-top: 8%;
+}
+
+#FormaBtn:hover {
+  background-color: #24879f;
+}
+
+/* Стили для элементов формы */
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  /*  Чтобы padding не увеличивал ширину */
+}
+
+
+
+
+
+
+
+
+
+.container {
+    display: flex; 
+    height: auto; 
+    width: 100%; 
+    position: relative;
+    overflow: hidden; 
+}
+.container img {
+    width: 50%; 
+    height: auto; 
+    object-fit: cover; 
+}
+.text2 {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    padding: 40px; 
+    width: 70%;
+    background-color:  #73C9DF; 
+    color: #196477;
+    font-size: 30px;
+}
+
+
+.conteiner-button{
+    background-color: #196477;
+    color: white;
+    border: none;
+    padding: 10px 8px;
+    font-size: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 60%;
+}
+.conteiner-button:hover{
+    background-color: #24879f;
+}
+.mark{
+    color: #F14B35;
+}
+
+/* Адаптивность для экранов до 1024px (ноутбуки) */
+@media (max-width: 1024px) {
+  .conteiner-button{
+       font-size: 20px;
+  }
+    .text2 {
+        font-size: 150%; 
+    }
+    .container {
+      width: 100%; 
+  }
+  .container img {
+      width: 50%; 
+  }
+}
+
+/* Адаптивность для экранов до 768px */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; 
+        max-width: 100%; 
+        
+    }
+    .container img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+    .conteiner-button {
+      font-size: 25px;
+      width: 40%;
+      margin-bottom: 4%;
+  }
+  
+    .text2 {
+        width: 100%; 
+        padding: 0 5px 0 15px;
+        font-size: 25px;
+    }
+}
+
+/* Адаптивность для экранов до 480px */
+@media (max-width: 480px) {
+    
+    .text2 {
+        padding: 0 5px 0 5px;
+        font-size: 0.9rem;
+    }
+    .conteiner-button{
+      width: 50%;
+      font-size: 13px;
+    padding: 2%;
+    margin-bottom: 5%;
+    }
+
+    .container img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+  }
+
+  .form-container {
+    width: 300px;
+}
+
+  .form-container h2 {
+    font-size: 17px;
+}
+
+.form-container p {
+    font-size: 15px;
+}
+
+
+
+#FormaBtn {
+    padding: 6px 4px;
+    font-size: 10px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*отзывы*/
+
+* {
+    box-sizing: border-box;
+}
+.container2 {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .title {
+     width: 100%; 
+    text-align: center; 
+    margin-bottom: 6%; 
+    color: black;
+    margin-top: 10%;
+    font-size: 32px;
+  }
+
+  /* Стили для карусели */
+  .carousel-container {
+    width: 1080px; /* Задаём фиксированную ширину для трёх карточек (300px * 3) */
+    margin: 0 auto; /* Центрируем карусель */
+    overflow: hidden;
+    position: relative;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: auto; /* Ширина определяется содержимым */
+  }
+
+  .card {
+    width: 340px;
+    flex-shrink: 0;
+    margin: 0 10px;
+    background-color: #73C9DF;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .card-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-name {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2%;
+    font-family:  Century Gothic, sans-serif;
+    font-size: 20px;
+  }
+
+  .card-text {
+    font-size: 20px;
+    line-height: 1.4;
+    font-family:  Century Gothic, sans-serif;
+  }
+
+  /* Кнопки управления */
+  .carousel-controls {
+    text-align: center;
+    margin-top: 4%;
+  }
+
+  .carousel-button {
+    background-color: #196477;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin: 0 10px;
+  }
+
+  .carousel-button:hover {
+    background-color: #24879f;
+  }
+
+  @media (max-width: 1024px) {
+    
+
+    .carousel-container {
+      width: 720px;
+    }  
+    .card-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 15px;
+    }
+  
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    .card-name {
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 2%;
+      font-family:  Century Gothic, sans-serif;
+      font-size: 20px;
+    }
+  
+    .card-text {
+      font-size: 20px;
+      line-height: 1.4;
+      font-family:  Century Gothic, sans-serif;
+    }
+    
+
+    
+    
+  }
+
+  @media (max-width: 768px) {
+  
+  .container2{
+    padding: 0;
+    
+  }
+  .title {
+    margin-top: 15%;
+    
+}
+.title-fag {
+  padding-top: 50px;
+  padding-bottom: 20px;
+
+}
+
+
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+      width: 360px; /* На маленьких экранах занимаем всю ширину */
+  }
+.card {
+  width: 340px;
+  margin: 10px 10px;
+}
+.title-fag{
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.title {
+  font-size: 20px;
+  margin-top: 20%;
+}
+.footer-column {
+  font-size: 10px;
+}
+
+.card-text {
+  font-size: 15px;
+
+}
+.card-name {
+  
+  font-size: 17px;
+}
+
+.card-image {
+  width: 60px;
+  height: 60px;
+}
+.carousel-button {
+  font-size: 13px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .faq-container {
+    width: 1060px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+
+.title-fag{
+    text-align: center; 
+    margin-bottom: 6%; 
+    color: black;
+    margin-top: 17%;
+}
+.faq-question {
+    
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+    border: 2px solid #73C9DF;
+    border-radius: 5px;
+}
+
+.faq-question i {
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active i {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 10px;
+    display: none;
+   
+    border-radius: 0 0 5px 5px;
+}
+ .faq-answer p {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+ }
+/* Добавим линию под вопросом */
+.faq-item {
+  width: 100%;
+    position: relative;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+
+}
+
+.faq-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #eee;}
+   
+
+
+
+    @media (max-width: 1024px) {
+    .faq-container {
+      width: 700px;
+  }
+}
+    @media (max-width: 768px) {
+    
+    .title {
+      margin-top: 15%;
+      font-size: 27px;
+      
+  }
+  .title-fag {
+    padding-top: 50px;
+    font-size: 27px;
+    padding-bottom: 20px;
+  
+  }
+}
+
+
+    @media (max-width: 480px) {
+      .faq-container {
+        margin: 0 auto;
+        width: 340px;
+      }
+      .faq-question{
+        font-size: 15px;
+      }
+      .faq-answer p {
+        font-size: 14px;
+      }
+      .title-fag{
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.title {
+  font-size: 20px;
+  margin-top: 20%;
+}
+    }
+   
+    
+
+
+
+
+
+
+
+footer {
+    background-image: url('футер.png');
+    background-size: 100%;
+    padding: 12%;
+    color: white;
+    margin-top: 10%;
+}
+
+.footer-menu{
+list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    width: 45%; /* Устанавливаем ширину для столбцов */
+}
+
+.footer-column h3 {
+    margin: 0;
+}
+
+.footer-column p {
+    margin: 0;
+}
+

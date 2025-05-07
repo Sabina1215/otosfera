@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ремонт слуховых аппаратов</title>
+    <link rel="stylesheet" href="Ремонт.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="фавикон.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="лого (2).png" alt="">
+            <nav class="navigation">
+                <ul class="desktop-menu">
+                    <li><a href="index.html">ГЛАВНАЯ</a></li>
+                    <li><a href="услуги.html">УСЛУГИ</a></li>
+                    <li><a href="аппараты.html">АППАРАТЫ</a></li>
+                    <li><a href="onas.html">О НАС</a></li>
+                </ul>
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+
+
+
+
+    </header>
+
+    <div class="mobile-menu">
+        <button class="close-menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="услуги.html">Услуги</a></li>
+            <li><a href="аппараты.html">Аппараты</a></li>
+            <li><a href="onas.html">О нас</a></li>
+        </ul>
+    </div>
+
+
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeMenu = document.querySelector('.close-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+    </script>
+
+
+
+
+    <div class="nachalo">
+        <div class="foto1">
+            <img src="ремонт.jpg" alt="">
+        </div>
+        <div class="opisanie">
+            <p><span class="mark2">Ремонт слуховых аппаратов</span> любой сложности вы можете произвести, обратившись в
+                центры слуха ОТОСФЕРА.</p>
+        </div>
+    </div>
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const opisanie = document.querySelector('.opisanie');
+
+    function checkVisibility() {
+        const rect = opisanie.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Проверяем, виден ли элемент на экране
+        if (rect.top < windowHeight && rect.bottom > 0) {
+            opisanie.classList.add('visible');
+            window.removeEventListener('scroll', checkVisibility);
+        }
+    }
+
+   
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility();
+})
+    </script>
+
+
+
+
+    <div class="spisok">
+        <h1>Мы производим ремонт следующих аппаратов:</h1>
+        <ul>
+            <li>заушные (BTE)</li>
+            <li>внутриушные (ITE)</li>
+            <li>внутриканальные (CIC)</li>
+            <li>карманные</li>
+        </ul>
+    </div>
+
+    <div class="text">
+        <p>Важно понимать, что ремонт современных цифровых и аналоговых слуховых аппаратов является очень сложным из-за
+        миниатюрности внутренних элементов аппаратов.</p> 
+        <p>Доверять его стоит <span class="mark2">только мастерам</span>, которые занимаются этим
+        профессионально. Проводимый нами ремонт слуховых аппаратов – это профессиональный подход к оказываемым услугам.</p>
+        <p>Мы всегда <span class="mark2">даем гарантии качества</span> произведенных нами работ. Поэтому Вы можете быть уверены в том, что проведенный
+        нами ремонт цифровых слуховых аппаратов позволит решить возникшую проблему.</p>
+        
+    </div>
+
+
+
+
+
+    <div class="fon">
+        <div class="forma">
+            <p>Консультация <br><span class="mark2">СУРДОЛОГА</span> <br>поможет вам решить вашу проблему</p>
+            <button id="openFormBtn">Записаться на прием</button>
+        </div>
+        <div class="foto">
+            <img src="лого (2).png" alt="">
+        </div>
+    </div>
+
+
+
+
+
+    <div id="overlay" class="overlay">
+        <div id="formContainer" class="form-container">
+            <span id="closeFormBtn" class="close-btn">&times;</span>
+            <h2>Запись на прием</h2>
+            <p>заполните форму и наш администратор свяжется с Вами</p>
+            <form id="appointmentForm">
+                <label for="name">ФИО:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+
+                <button id="FormaBtn" type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Получаем элементы
+        const openFormBtn = document.getElementById('openFormBtn');
+        const closeFormBtn = document.getElementById('closeFormBtn');
+        const overlay = document.getElementById('overlay');
+        const appointmentForm = document.getElementById('appointmentForm');
+
+        // Открытие формы
+        openFormBtn.addEventListener('click', () => {
+            overlay.style.display = 'flex';
+        });
+
+        // Закрытие формы
+        closeFormBtn.addEventListener('click', () => {
+            overlay.style.display = 'none';
+        });
+
+        // Закрытие формы при клике вне формы
+        overlay.addEventListener('click', (event) => {
+            if (event.target === overlay) {
+                overlay.style.display = 'none';
+            }
+        });
+
+        // Обработка отправки формы (пример)
+        appointmentForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Предотвращаем стандартную отправку формы
+
+            // Получаем данные из формы
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+
+            // Здесь можно отправить данные на сервер (например, с помощью AJAX)
+            console.log('Имя:', name);
+            console.log('Телефон:', phone);
+
+            // Закрываем форму после отправки
+            overlay.style.display = 'none';
+            alert('Спасибо за вашу заявку! Мы свяжемся с вами в ближайшее время.');
+
+            // Очищаем форму (опционально)
+            appointmentForm.reset();
+        });
+    </script>
+
+
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column address">
+                <h3>Адрес</h3>
+                <p>г. Самара,
+                    Коммунистическая ул., 23</p>
+            </div>
+            <div class="footer-column phone">
+                <h3>Телефон</h3>
+                <p>+7 (846) 260-40-40</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

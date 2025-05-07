@@ -1,0 +1,889 @@
+body {
+    font-family: Century Gothic, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+
+
+
+
+
+/*шапка*/
+header {
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(to right, #C3E8F1, #39B3D2);
+}
+
+.logo {
+    margin: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.navigation {
+    margin-right: 1%;
+}
+
+.desktop-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+}
+
+.desktop-menu li {
+    margin-left: 30px;
+
+}
+
+.desktop-menu a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    /* Скрываем на больших экранах */
+}
+
+/* Мобильное меню */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 210px;
+    height: 100%;
+    background-color: #73C9DF;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: translateX(100%);
+    /* Скрываем меню за пределами экрана */
+    transition: transform 0.3s ease;
+    /* Плавная анимация */
+    z-index: 1000;
+    /*  Убеждаемся, что меню поверх всего */
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+    /* Показываем меню */
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-menu li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-family: Century Gothic, sans-serif;
+}
+
+.mobile-menu a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+
+}
+
+.close-menu {
+    background: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+
+
+
+
+.container-onas {
+    margin-top: 3%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+
+.onas {
+    display: flex;
+    z-index: 1;
+    margin-top: 40px;
+    /*  Добавляем отступ сверху, если необходимо */
+    position: relative;
+    /*  Убеждаемся, что контейнер имеет контекст для z-index */
+    left: 0;
+}
+
+.onas img {
+    width: 40%;
+    object-fit: cover;
+    margin-left: 5%;
+    z-index: 0;
+}
+
+.onas p {
+    font-size: 40px;
+    margin-left: 5%;
+    margin-top: 8%;
+}
+
+.mark1 {
+    color: #F14B35;
+}
+
+.text-onas {
+    position: relative;
+    background-color: #73C9DF;
+    z-index: 2;
+    margin-top: -190px;
+    /* Пример: компенсируем перекрытие с .onas */
+    left: 30%;
+    height: 250px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.mark2 {
+    color: #F14B35;
+    font-size: 50px;
+}
+
+.text-onas p {
+    font-size: 35px;
+}
+
+.text-onas div {
+    margin-left: 5%;
+}
+
+
+
+
+
+.spisok {
+    margin-top: 8%;
+	padding: 0;
+}
+
+.spisok ul {
+    font-size: 30px;
+    margin: 0 auto;
+    width: 88%;
+}
+
+.spisok li {
+    margin-bottom: 3%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.specialist{
+    display: flex;
+    align-items: center;
+    margin: 5% 6%;
+  position: relative;
+  overflow: hidden;
+}
+
+.fot div{
+    border: none;
+    border-radius: 30px 0 30px 0;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+.fot{
+    width: 70%;
+}
+.text_specialist{
+    font-size: 35px;
+}
+
+.niz2{
+    position: relative;
+    z-index: 0;
+    left: 31%;
+    margin-top: -540px;
+    width: 520px;
+    height: 580px;
+}
+.niz1{
+    position: relative;
+    z-index: 0;
+    left: 22%;
+    width: 520px;
+    height: 580px;
+}
+.verh{
+    position: relative;
+    z-index: 1;
+    width: 520px;
+    height: 580px;
+    left: 27%;
+    margin-top: -544px;
+}
+.fio{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+.fon {
+    margin: 5% 6%;
+    background-color: #73C9DF;
+    padding: 3%;
+    border-radius: 10px;
+    display: flex;
+}
+
+.forma {
+    text-align: center;
+    font-size: 40px;
+    width: 50%;
+    background-color: #C3E8F1;
+    border-radius: 10px;
+    padding: 3%;
+}
+
+.foto {
+    width: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.foto img {
+    width: 70%;
+}
+
+#openFormBtn {
+    background-color: #196477;
+    color: white;
+    border: none;
+    padding: 10px 8px;
+    font-size: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 60%;
+    margin-top: 8%;
+}
+
+#openFormBtn:hover {
+    background-color: #24879f;
+}
+
+
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Полупрозрачный черный фон */
+    z-index: 1000;
+    /* Убедитесь, что оверлей поверх всего контента */
+    display: none;
+    /* Скрываем оверлей изначально */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Стили для контейнера формы */
+.form-container {
+    background-color: #73C9DF;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 450px;
+    position: relative;
+    /*  Для позиционирования кнопки закрытия */
+    text-align: center;
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #000000;
+}
+
+.form-container p {
+    text-align: center;
+    color: #F14B35;
+}
+
+/* Стили для кнопки закрытия */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #000000;
+}
+
+#FormaBtn {
+    background-color: #196477;
+    color: white;
+    border: none;
+    padding: 10px 8px;
+    font-size: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 40%;
+    margin-top: 8%;
+}
+
+#FormaBtn:hover {
+    background-color: #24879f;
+}
+
+/* Стили для элементов формы */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    /*  Чтобы padding не увеличивал ширину */
+}
+
+
+
+.kontakt {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin: 5% 2% 5% 2%;
+    font-size: 23px;
+    align-items: center;
+}
+
+.telephon {
+    display: flex;
+    align-items: center;
+}
+
+.telephon img {
+    width: 30px;
+    height: 30px;
+}
+
+.telephon p {
+    margin: 0;
+}
+
+.pochta {
+    display: flex;
+    align-items: center;
+}
+
+.pochta img {
+    width: 30px;
+    height: 30px;
+}
+
+.pochta p {
+    margin: 0;
+}
+
+.kontakt2 h3 {
+    margin: 5px 0;
+}
+
+iframe {
+    margin-right: 20%;
+}
+
+
+
+footer {
+    background-image: url('футер.png');
+    background-size: 100%;
+    padding: 12%;
+    color: white;
+    position: relative;
+    /*  Ставим relative для позиционирования контента футера */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    width: 45%;
+    /* Устанавливаем ширину для столбцов */
+}
+
+.footer-column h3 {
+    margin: 0;
+}
+
+.footer-column p {
+    margin: 0;
+}
+
+
+
+
+
+
+
+/* Медиа-запросы */
+
+@media (max-width: 1024px) {
+    .navigation li {
+        margin-left: 15px;
+    }
+
+    .onas p {
+        font-size: 30px;
+    }
+
+    .text-onas {
+        margin-top: -100px;
+        /* Пример: компенсируем перекрытие с .onas */
+        height: 180px;
+    }
+
+    .mark2 {
+        font-size: 40px;
+    }
+
+    .text-onas p {
+        font-size: 25px;
+    }
+
+    .spisok ul {
+        font-size: 25px;
+    }
+
+    .spisok li {
+        margin-bottom: 3%;
+    }
+
+    .fon {
+        margin: 6% 6%;
+    }
+
+    .forma {
+        font-size: 30px;
+    }
+
+    .foto {
+        width: 50%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .foto img {
+        width: 70%;
+    }
+
+    #openFormBtn {
+        font-size: 19px;
+        width: 70%;
+    }
+
+    .kontakt {
+        font-size: 17px;
+    }
+
+    iframe {
+        width: 400px;
+        height: 300px;
+    }
+    
+.fot{
+    width: 90%;
+}
+.text_specialist{
+    font-size: 30px;
+}
+
+.niz2{
+    left: 8%;
+    margin-top: -559px;
+    width: 500px;
+}
+.niz1{
+    left: 0;
+    width: 500px;
+}
+.verh{
+    width: 500px;
+    left: 4%;
+    margin-top: -560px;
+}
+.fio{
+    font-size: 32px;
+}
+
+
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .desktop-menu {
+        display: none;
+        /* Скрываем десктопное меню на маленьких экранах */
+    }
+
+    .menu-toggle {
+        display: block;
+        /* Показываем кнопку меню */
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .navigation li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        padding: 2% 3%;
+    }
+
+    .logo img {
+        max-width: 24%;
+        height: auto;
+    }
+
+    .onas p {
+        font-size: 25px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    .text-onas {
+        margin-top: -90px;
+        /* Пример: компенсируем перекрытие с .onas */
+        height: 150px;
+    }
+    
+    .fon {
+        margin: 6% 6%;
+    }
+    .mark2 {
+        font-size: 30px;
+    }
+
+    .text-onas p {
+        font-size: 20px;
+    }
+
+    .spisok ul {
+        font-size: 20px;
+    }
+
+    .spisok li {
+        margin-bottom: 3%;
+    }
+
+    .forma {
+        font-size: 20px;
+    }
+
+    #openFormBtn {
+        font-size: 15px;
+        width: 70%;
+    }
+
+    .kontakt {
+        font-size: 15px;
+    }
+
+    iframe {
+        width: 350px;
+        height: 300px;
+    }
+
+    
+    
+    
+    .fot{
+        width: 84%;
+    }
+    .text_specialist{
+        font-size: 25px;
+    }
+    
+    .niz2{
+        left: 0;
+        margin-top: -415px;
+        width: 350px;
+        height: 400px;
+    }
+    .niz1{
+        left: 9%;
+        top: 45px;
+        width: 350px;
+        height: 400px;
+    }
+    .verh{        
+        width: 350px;
+        height: 400px;
+        margin-top: -370px;
+    }
+    .fio{
+        font-size: 27px;
+    }
+
+}
+
+
+
+
+
+
+
+@media (max-width: 430px) {
+    .header {
+        padding: 10px;
+    }
+
+
+    .menu-toggle {
+        font-size: 20px;
+    }
+
+    .navigation a {
+        font-size: 14px;
+    }
+
+
+
+    .onas p {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 1.1rem;
+    }
+
+    .text-onas {
+        margin-top: -40px;
+        height: 90px;
+    }
+
+    .mark2 {
+        font-size: 20px;
+    }
+
+    .text-onas p {
+        font-size: 10px;
+    }
+
+    .spisok ul {
+        font-size: 10px;
+        margin: 0;
+    }
+
+    .spisok li {
+        margin-bottom: 3%;
+    }
+
+    .forma {
+        font-size: 12px;
+    }
+
+    .form-container {
+        width: 250px;
+    }
+
+    #openFormBtn {
+        font-size: 10px;
+        width: 90%;
+        padding: 6px 4px;
+    }
+
+    .form-container h2 {
+        font-size: 17px;
+    }
+
+    .form-container p {
+        font-size: 15px;
+    }
+
+
+
+    #FormaBtn {
+        padding: 6px 4px;
+        font-size: 10px;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+
+    
+    
+    .kontakt {
+        font-size: 8px;
+    }
+    
+
+    iframe {
+        width: 200px;
+        height: 174px;
+    }
+    .pochta img {
+        width: 10px;
+        height: 10px;
+    }
+    .telephon img {
+        width: 10px;
+        height: 10px;
+    }
+    .path{
+        width: 10px;
+        height: 10px; 
+    }
+
+    .specialist{
+        display: flex;
+        align-items: center;
+        margin: 8% 6%;
+      position: relative;
+    }
+    
+    .fot div{
+        border-radius: 10px 0 10px 0;
+    }
+    .fot{
+        width: 60%;
+        height: 200px;
+    }
+    .text_specialist{
+        font-size: 12px;
+    }
+    
+    .niz2{
+        top: 430px;
+        width: 160px;
+        height: 180px;
+    }
+    .niz1{
+        left: 8%;
+        width: 160px;
+        height: 180px;
+        top: 20px;
+    }
+    .verh{
+        width: 160px;
+        height: 180px;
+        left: 4%;
+        top: 202px;
+    }
+    .fio{
+        font-size: 15px;
+    }
+    
+
+}
+
+@media (max-width: 380px) {
+    .niz2{
+        top: 467px;
+        width: 140px;
+        height: 160px;
+    }
+    .niz1{
+        left: 11%;
+        width: 140px;
+        height: 160px;
+        top: 20px;
+    }
+    .verh{
+        width: 140px;
+        height: 160px;
+        left: 6%;
+        top: 220px;
+    }
+    .fot {
+        height: 180px;
+        width: 70%;
+    }
+    iframe {
+        width: 170px;
+    }
+}

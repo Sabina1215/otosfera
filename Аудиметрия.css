@@ -1,0 +1,618 @@
+body {
+    font-family:  Century Gothic, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+    
+}
+
+
+
+
+
+
+
+
+
+/*шапка*/
+header {
+   position: relative;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(0, 0, 0);
+   background: linear-gradient(to right, #C3E8F1, #39B3D2);
+  }
+  
+  .logo {
+    margin: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo img {
+  max-width: 100%;
+  height: auto;
+  }
+  
+  .navigation{
+  margin-right: 1%;
+  }
+  .desktop-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    
+  }
+  
+  .desktop-menu li {
+    margin-left: 30px;
+    
+  }
+  
+  .desktop-menu a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+  }
+  
+  .menu-toggle {
+    background: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Скрываем на больших экранах */
+  }
+  
+  /* Мобильное меню */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 210px;
+    height: 100%;
+    background-color:#73C9DF;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: translateX(100%); /* Скрываем меню за пределами экрана */
+    transition: transform 0.3s ease; /* Плавная анимация */
+    z-index: 1000; /*  Убеждаемся, что меню поверх всего */
+  }
+  
+  .mobile-menu.open {
+    transform: translateX(0); /* Показываем меню */
+  }
+  
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .mobile-menu li {
+    margin-bottom: 10px;
+  }
+  
+  .mobile-menu a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+  }
+  
+  .close-menu {
+    background: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+
+  .foto1 img{
+    object-fit: cover; 
+    height: 600px;
+    width: 100%;
+    filter: brightness(60%);
+    z-index: 1;
+    position: relative;
+  }
+
+  .opisanie{
+    position: relative;
+    background-color: #73C9DF;
+    z-index: 2;
+    margin-top: -180px;
+    left: 16%;
+    height: 250px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 40px 0 40px 0;
+    opacity: 0; /* Скрываем элемент изначально */
+    transform: translateY(40px); /* Сдвигаем элемент вниз */
+    transition: opacity 2s ease, transform 2s ease; /* Плавный переход */
+}
+
+.opisanie.visible {
+    opacity: 1; /* Делаем элемент видимым */
+    transform: translateY(0); /* Возвращаем элемент на место */
+}
+  
+ 
+
+
+
+  .opisanie p{
+    font-size: 35px;
+    text-align: center;
+  }
+  .mark2 {
+    color: #F14B35;
+}
+.nachalo{
+    margin-bottom: 10%;
+}
+
+
+
+
+.spisok h1{
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 3%;
+}
+.spisok ul {
+    /* Убираем стандартные маркеры */
+    font-size: 30px;
+    margin: 0 auto;
+    width: 80%;
+    margin-bottom: 6%;
+}
+
+.spisok li {
+    margin-bottom: 3%;
+}
+
+.text{
+    font-size: 30px;
+    margin: 0 9%;
+    margin-bottom: 2%;
+}
+
+
+
+
+
+
+
+
+.fon {
+    margin: 8%;
+    background-color: #73C9DF;
+    padding: 3%;
+    border-radius: 10px;
+    display: flex;
+}
+
+.forma {
+    text-align: center;
+    font-size: 40px;
+    width: 50%;
+    background-color: #C3E8F1;
+    border-radius: 10px;
+    padding: 3%;
+}
+
+.foto {
+    width: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.foto img {
+    width: 70%;
+}
+
+#openFormBtn {
+    background-color: #196477;
+    color: white;
+    border: none;
+    padding: 10px 8px;
+    font-size: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 60%;
+    margin-top: 8%;
+}
+
+#openFormBtn:hover {
+    background-color: #24879f;
+}
+
+
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Полупрозрачный черный фон */
+    z-index: 1000;
+    /* Убедитесь, что оверлей поверх всего контента */
+    display: none;
+    /* Скрываем оверлей изначально */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Стили для контейнера формы */
+.form-container {
+    background-color: #73C9DF;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 450px;
+    position: relative;
+    /*  Для позиционирования кнопки закрытия */
+    text-align: center;
+}
+
+.form-container h2 {
+    text-align: center;
+    color: #000000;
+}
+
+.form-container p {
+    text-align: center;
+    color: #F14B35;
+}
+
+/* Стили для кнопки закрытия */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #000000;
+}
+
+#FormaBtn {
+    background-color: #196477;
+    color: white;
+    border: none;
+    padding: 10px 8px;
+    font-size: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 40%;
+    margin-top: 8%;
+}
+
+#FormaBtn:hover {
+    background-color: #24879f;
+}
+
+/* Стили для элементов формы */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    /*  Чтобы padding не увеличивал ширину */
+}
+
+
+
+
+
+footer {
+    background-image: url('футер.png');
+    background-size: 100%;
+    padding: 12%;
+    color: white;
+    position: relative;
+    /*  Ставим relative для позиционирования контента футера */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    width: 45%;
+    /* Устанавливаем ширину для столбцов */
+}
+
+.footer-column h3 {
+    margin: 0;
+}
+
+.footer-column p {
+    margin: 0;
+}
+
+
+
+
+
+
+
+/* Медиа-запросы */
+
+@media (max-width: 1024px) {
+    .navigation li {
+        margin-left: 15px;
+    }
+
+    .onas p {
+        font-size: 30px;
+    }
+
+    .text-onas {
+        margin-top: -100px;
+        /* Пример: компенсируем перекрытие с .onas */
+        height: 180px;
+    }
+
+    
+    .spisok ul {
+        font-size: 25px;
+        margin: 0 auto;
+        width: 80%;
+    }
+    .foto1 img{
+        height: 500px;
+      }
+
+    .spisok li {
+        margin-bottom: 3%;
+    }
+
+    .fon {
+        margin: 8% 9%;
+        background-color: #73C9DF;
+        padding: 3%;
+        border-radius: 10px;
+        display: flex;
+    }
+
+    .forma {
+        font-size: 30px;
+    }
+
+    .foto {
+        width: 50%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .foto img {
+        width: 70%;
+    }
+
+    #openFormBtn {
+        font-size: 19px;
+        width: 70%;
+    }
+
+    .opisanie p{
+        font-size: 30px;
+    }
+
+    .text {
+        font-size: 25px;
+    }
+
+    
+
+
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .desktop-menu {
+        display: none;
+        /* Скрываем десктопное меню на маленьких экранах */
+    }
+
+    .menu-toggle {
+        display: block;
+        /* Показываем кнопку меню */
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navigation ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .navigation li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .logo {
+        padding: 2% 3%;
+    }
+
+    .logo img {
+        max-width: 24%;
+        height: auto;
+    }
+
+    .foto1 img{
+        height: 400px;
+      }
+    .opisanie{
+        margin-top: -140px;
+        height: 180px;
+    }
+    
+    .text{
+        font-size: 20px;
+    }
+    
+      .opisanie p{
+        font-size: 25px;
+      }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    .spisok{
+        margin: 0 12px;
+    }
+    
+  
+    .spisok ul {
+        font-size: 20px;
+        width: 85%;
+    }
+
+    .spisok li {
+        margin-bottom: 3%;
+    }
+
+    .forma {
+        font-size: 20px;
+    }
+
+    #openFormBtn {
+        font-size: 15px;
+        width: 70%;
+    }
+
+
+}
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+
+    .foto1 img{
+        height: 250px;
+      }
+
+    .opisanie p{
+        font-size: 15px;
+    }    
+    .opisanie{
+        margin-top: -70px;
+        left: 11%;
+        height: 100px;
+    }   
+
+    .menu-toggle {
+        font-size: 20px;
+    }
+
+    .navigation a {
+        font-size: 14px;
+    }
+
+
+    .spisok h1 {
+        font-size: 16px;
+    }
+
+    .spisok ul {
+        font-size: 12px;
+        width: 90%;
+    }
+
+    .text{
+        font-size: 12px;
+        margin: 0 8%;
+    }
+    .spisok li {
+        margin-bottom: 3%;
+    }
+
+    .forma {
+        font-size: 12px;
+    }
+
+    .form-container {
+        width: 250px;
+    }
+
+    #openFormBtn {
+        font-size: 10px;
+        width: 90%;
+        padding: 6px 4px;
+    }
+
+    .fon {
+        margin: 8% 8%;
+    }
+    .form-container h2 {
+        font-size: 17px;
+    }
+
+    .form-container p {
+        font-size: 15px;
+    }
+
+
+
+    #FormaBtn {
+        padding: 6px 4px;
+        font-size: 10px;
+    }
+
+    footer {
+        font-size: 10px;
+    }
+
+    
+    
+
+}
